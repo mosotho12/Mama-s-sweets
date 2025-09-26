@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Place an online order for cakes, cupcakes, and custom sweets.">
+  <title>MAMA's Sweets - Order</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>MAMA's Sweets</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="order.html" class="active">Order</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="text-center">Place Your Order</h1>
+    <p class="text-center">Fill out the form below to order your favorite sweets. We’ll confirm your order via email or phone.</p>
+
+    <section class="order-form">
+      <h2 class="text-center">Order Form</h2>
+      <form action="send_order.php" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="product">Select Product:</label>
+        <select id="product" name="product" required>
+          <option value="">-- Please Select --</option>
+          <option value="Custom Cake">Custom Cake</option>
+          <option value="Cupcakes">Cupcakes</option>
+          <option value="Flavored Candy">Flavored Candy</option>
+          <option value="Cookies">Cookies</option>
+          <option value="Sweet Gift Box">Sweet Gift Box</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <label for="flavor">Preferred Flavor(s):</label>
+        <input type="text" id="flavor" name="flavor">
+
+        <label for="custom">Custom Message (if any):</label>
+        <input type="text" id="custom" name="custom">
+
+        <label for="delivery">Delivery or Pickup:</label>
+        <select id="delivery" name="delivery" required>
+          <option value="Pickup">Pickup</option>
+          <option value="Delivery">Delivery</option>
+        </select>
+
+        <label for="address">Delivery Address (if applicable):</label>
+        <textarea id="address" name="address"></textarea>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes"></textarea>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MAMA's Sweets | Polokwane | hello@sweettreatsbakery.co.za</p>
+  </footer>
+</body>
+</html>

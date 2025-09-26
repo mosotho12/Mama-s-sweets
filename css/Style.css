@@ -1,0 +1,325 @@
+/* ----------------------------
+   RESET & BASE STYLES
+---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fffdfc;
+}
+
+/* ----------------------------
+   HEADER & NAVIGATION
+---------------------------- */
+header {
+  background: #ff7fb0;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+header h1 {
+  margin: 0.5rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background: #fff;
+  color: #ff7fb0;
+  border-radius: 5px;
+}
+
+/* ----------------------------
+   MAIN CONTENT
+---------------------------- */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* HERO SECTION (Home) */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background: #fff0f6;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  color: #ff7fb0;
+  margin-bottom: 0.5rem;
+}
+
+/* GRID & CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* SECTIONS */
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ff7fb0;
+}
+
+/* VALUE CARDS (About Page) */
+.values, .team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-card, .member, .product-card, .blog-post {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.value-card h3, .member h3, .product-card h3, .blog-post h3 {
+  color: #ff7fb0;
+  margin-bottom: 0.5rem;
+}
+
+/* TEAM IMAGES */
+.member img {
+  width: 150px;          
+  height: 150px;         
+  border-radius: 50%;    
+  object-fit: cover;     
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s;  
+}
+
+.member img:hover {
+  transform: scale(1.05);  /* subtle zoom on hover */
+}
+
+/* BLOG POSTS */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.blog-post img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #ff7fb0;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.read-more:hover {
+  background: #e56595;
+}
+
+/* FORMS (Order, Booking, Contact) */
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 0.75rem;
+  background: #ff7fb0;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #e56595;
+}
+
+/* CART (Products Page) */
+.cart {
+  margin-top: 3rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.checkout {
+  margin-top: 1rem;
+  background: #ff7fb0;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkout:hover {
+  background: #e56595;
+}
+
+/* ASIDE (Home Page Offer) */
+aside {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fff8fb;
+  border: 1px dashed #ff7fb0;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* ----------------------------
+   RESPONSIVE DESIGN
+---------------------------- */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  header img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .grid, .values, .team-members, .blog-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* --- General Image Styling --- */
+img {
+  max-width: 100%;      /* ensures images do not overflow their containers */
+  height: auto;         /* keeps original aspect ratio */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;  /* gives all images a subtle rounded look */
+}
+
+/* --- About Page Images --- */
+/* Team photos */
+.member img {
+  width: 150px;         /* perfect circle size */
+  height: 150px;
+  border-radius: 50%;   /* makes the image circular */
+  object-fit: cover;    /* crops to fit nicely */
+  margin-bottom: 0.5rem;
+}
+
+/* About section main image (logo or bakery image) */
+.about-section img {
+  width: 250px;         /* balanced size, not too big */
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* --- Products Page Images --- */
+.product-card img {
+  width: 200px;         /* uniform product image size */
+  height: 200px;
+  object-fit: cover;    /* prevents stretching */
+  margin-bottom: 1rem;
+}
+
+/* --- Home Page Featured Treats --- */
+.grid .card img {
+  width: 250px;         /* keeps home cards consistent */
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}

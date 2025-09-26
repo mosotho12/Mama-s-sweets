@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse MAMA's Sweets products and add them to your cart.">
+  <title>MAMA's Sweets - Products</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>MAMA's Sweets</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="text-center">Our Products</h1>
+
+    <section class="product-container">
+      <div class="product-card">
+        <img src="../assets/72f00e08-6781-440e-9438-9c2d46fb1bba.jfif" alt="Cupcake">
+        <h3>Gourmet Cupcake</h3>
+        <p>R25 each</p>
+        <button onclick="addToCart('Gourmet Cupcake', 25)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="../assets/ef57d075-9898-442c-9c4d-5660421e54a1.jfif" alt="Cake">
+        <h3>Custom Cake</h3>
+        <p>R300</p>
+        <button onclick="addToCart('Custom Cake', 300)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="../assets/62892621-e0dc-4ae7-b939-d7970160a2ba.jfif" alt="Candy">
+        <h3>Flavored Candy</h3>
+        <p>R15 per bag</p>
+        <button onclick="addToCart('Flavored Candy', 15)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="../assets/81a8bee3-f7d9-483e-84c3-1feb1c066a0a.jfif" alt="Snack">
+        <h3>Sweet Snack Box</h3>
+        <p>R80</p>
+        <button onclick="addToCart('Sweet Snack Box', 80)">Add to Cart</button>
+      </div>
+    </section>
+
+    <section class="cart">
+      <h2>Your Cart</h2>
+      <ul class="cart-items" id="cart-items"></ul>
+      <p><strong>Total: R<span id="cart-total">0</span></strong></p>
+      <button class="checkout" onclick="checkout()">Proceed to Checkout</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MAMA's Sweets | Polokwane | hello@sweettreatsbakery.co.za</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(product, price) {
+      cart.push({ product, price });
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      cartItems.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        cartItems.innerHTML += `
+          <li>
+            ${item.product} - R${item.price}
+            <button onclick="removeItem(${index})">X</button>
+          </li>`;
+      });
+      cartTotal.textContent = total;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function checkout() {
+      if(cart.length === 0) {
+        alert("Your cart is empty!");
+      } else {
+        alert("Proceeding to checkout!");
+        window.location.href = "order.html";
+      }
+    }
+  </script>
+</body>
+</html>
